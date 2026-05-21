@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polina English — Уроки английского онлайн</title>
+<meta name="description" content="Уроки английского онлайн с сертифицированным преподавателем. 10+ лет опыта, все уровни и возрасты. Запись через Telegram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --teal:#1A7A7A;--teal-light:#E8F4F4;--teal-mid:#5DCAA5;
+  --cream:#FAFAF7;--dark:#1C1C1A;--muted:#6B6B68;
+  --border:#E8E8E4;--white:#FFFFFF;--surface:#F4F4F0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);line-height:1.6;font-size:16px}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--teal);text-decoration:none}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--teal);color:#fff;padding:8px 18px;border-radius:4px;font-size:13px;font-weight:500;text-decoration:none;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+
+.hero{padding:5rem 2rem 4rem;text-align:center;max-width:680px;margin:0 auto}
+.badge{display:inline-block;background:var(--teal-light);color:var(--teal);font-size:12px;font-weight:500;padding:5px 16px;border-radius:20px;margin-bottom:1.75rem;letter-spacing:0.06em}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,3.6rem);font-weight:500;line-height:1.12;margin-bottom:1.25rem;color:var(--dark)}
+h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:15px;color:var(--muted);max-width:460px;margin:0 auto 2.5rem;line-height:1.75}
+.stats{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-bottom:2.5rem;padding:2rem;background:var(--white);border-radius:12px;border:0.5px solid var(--border)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:500;color:var(--teal);line-height:1}
+.stat-label{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.4}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:#fff;padding:14px 32px;border-radius:4px;font-size:15px;font-weight:500;text-decoration:none;transition:opacity 0.2s}
+.hero-cta:hover{opacity:0.85}
+.hero-cta svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+
+section{padding:4rem 2rem}
+.container{max-width:720px;margin:0 auto}
+.section-label{font-size:11px;letter-spacing:0.14em;color:var(--teal);font-weight:500;text-transform:uppercase;margin-bottom:0.5rem}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:500;margin-bottom:2rem;line-height:1.2;color:var(--dark)}
+
+.about{background:var(--white);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.about-card{background:var(--surface);border-radius:12px;padding:1.4rem;border:0.5px solid var(--border)}
+.about-icon{width:36px;height:36px;background:var(--teal-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.about-icon svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.about-card strong{font-size:14px;font-weight:500;display:block;margin-bottom:5px;color:var(--dark)}
+.about-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+.pricing{background:var(--cream)}
+.pricing-tabs{display:flex;gap:8px;margin-bottom:2rem;flex-wrap:wrap}
+.tab-btn{padding:8px 20px;border-radius:20px;border:0.5px solid var(--border);background:var(--white);font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--muted);transition:all 0.15s;font-weight:400}
+.tab-btn:hover{border-color:var(--teal);color:var(--teal)}
+.tab-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.price-card{background:var(--white);border:0.5px solid var(--border);border-radius:12px;padding:1.5rem;position:relative}
+.price-card.popular{border:2px solid var(--teal)}
+.popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;font-size:11px;padding:3px 14px;border-radius:20px;white-space:nowrap;font-weight:500;font-family:'DM Sans',sans-serif}
+.price-duration{font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:400}
+.price-amount{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:500;color:var(--dark);line-height:1}
+.price-currency{font-size:1.2rem;vertical-align:super}
+.price-unit{font-size:12px;color:var(--muted);margin-top:5px}
+.price-save{font-size:12px;color:var(--teal);font-weight:500;margin-top:8px;background:var(--teal-light);display:inline-block;padding:2px 10px;border-radius:20px}
+.panel{display:none}.panel.active{display:block}
+
+.reviews{background:var(--white);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.review-card{background:var(--surface);border-radius:12px;padding:1.4rem;border:0.5px solid var(--border)}
+.stars{color:var(--teal);font-size:15px;margin-bottom:1rem;letter-spacing:3px}
+.review-text{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:1.1rem;font-style:italic}
+.reviewer{display:flex;align-items:center;gap:10px}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--teal);flex-shrink:0;font-family:'DM Sans',sans-serif}
+.reviewer-name{font-size:13px;font-weight:500;color:var(--dark)}
+.reviewer-sub{font-size:11px;color:var(--muted);margin-top:1px}
+.reviews-note{font-size:12px;color:var(--muted);margin-top:1.5rem;font-style:italic;text-align:center}
+
+.booking{background:var(--cream);text-align:center}
+.booking-card{background:var(--white);border:0.5px solid var(--border);border-radius:16px;padding:3rem 2rem;max-width:500px;margin:0 auto}
+.booking-card h2{margin-bottom:0.75rem}
+.booking-card p{font-size:14px;color:var(--muted);margin-bottom:2rem;line-height:1.7}
+.tg-btn{display:inline-flex;align-items:center;gap:10px;background:var(--teal);color:#fff;padding:15px 36px;border-radius:4px;font-size:15px;font-weight:500;text-decoration:none;transition:opacity 0.2s}
+.tg-btn:hover{opacity:0.85}
+.tg-btn svg{width:22px;height:22px;fill:#fff;flex-shrink:0}
+.booking-note{font-size:12px;color:var(--muted);margin-top:1.25rem;line-height:1.6}
+
+footer{padding:2rem;text-align:center;border-top:0.5px solid var(--border);background:var(--white)}
+footer p{font-size:12px;color:var(--muted)}
+footer a{color:var(--teal);text-decoration:none}
+
+@media(max-width:600px){
+  nav{padding:1rem}
+  .hero{padding:3rem 1.25rem 2.5rem}
+  .stats{gap:1.5rem;padding:1.5rem}
+  section{padding:3rem 1.25rem}
+  .booking-card{padding:2rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Polina English</a>
+  <a class="nav-cta" href="https://t.me/polinapri" target="_blank">
+    <svg viewBox="0 0 24 24" fill="#fff" width="16" height="16"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    Записаться
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="badge">Онлайн-уроки английского</div>
+  <h1>Английский,<br>который <em>работает</em></h1>
+  <p class="hero-sub">Преподаватель с 10-летним опытом, CAE C1, TKT Band 1–3. Все уровни, все возрасты. Занятия онлайн — где бы вы ни находились.</p>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">лет опыта<br>преподавания</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3+</div>
+      <div class="stat-label">года — средний срок<br>занятий с учеником</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">B2</div>
+      <div class="stat-label">уровень ученика,<br>начавшего в 6 лет</div>
+    </div>
+  </div>
+  <a class="hero-cta" href="https://t.me/polinapri" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    Записаться на пробный урок
+  </a>
+</div>
+
+<section class="about">
+  <div class="container">
+    <div class="section-label">О преподавателе</div>
+    <h2>Почему занимаются именно со мной</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 15l-2 5l9-11h-6l2-5l-9 11h6z"/></svg>
+        </div>
+        <strong>Сертифицированный преподаватель</strong>
+        <p>TKT Bands 1, 2 & 3 от Cambridge + CAE C1. Бакалавр лингвистики, магистр методики преподавания иностранных языков.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+        </div>
+        <strong>Любой возраст и уровень</strong>
+        <p>Работаю с детьми от 3 лет до взрослых. От Beginner до Advanced. Подход подбирается индивидуально под каждого.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <strong>Реальные результаты</strong>
+        <p>Мои ученики проводят интервью на английском, переезжают за рубеж и уверенно используют язык в работе каждый день.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <strong>Основатель языковой школы</strong>
+        <p>4 года вела собственную школу Juicy English в Твери — разговорные клубы, игровые форматы, тематические мероприятия.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <div class="section-label">Стоимость</div>
+    <h2>Выберите формат</h2>
+    <div class="pricing-tabs">
+      <button class="tab-btn active" onclick="showPanel('single', this)">Разовые занятия</button>
+      <button class="tab-btn" onclick="showPanel('pack4', this)">Пакет 4 занятия</button>
+      <button class="tab-btn" onclick="showPanel('pack8', this)">Пакет 8 занятий</button>
+    </div>
+
+    <div id="single" class="panel active">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-duration">Одно занятие · 45 минут</div>
+          <div class="price-amount"><span class="price-currency"></span>2 000 ₽</div>
+          <div class="price-unit">за занятие</div>
+        </div>
+        <div class="price-card popular">
+          <div class="popular-badge">популярный</div>
+          <div class="price-duration">Одно занятие · 60 минут</div>
+          <div class="price-amount">2 500 ₽</div>
+          <div class="price-unit">за занятие</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pack4" class="panel">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-duration">4 занятия · 45 минут</div>
+          <div class="price-amount">7 500 ₽</div>
+          <div class="price-unit">за пакет · 1 875 ₽/занятие</div>
+          <div class="price-save">Экономия 500 ₽</div>
+        </div>
+        <div class="price-card popular">
+          <div class="popular-badge">популярный</div>
+          <div class="price-duration">4 занятия · 60 минут</div>
+          <div class="price-amount">9 500 ₽</div>
+          <div class="price-unit">за пакет · 2 375 ₽/занятие</div>
+          <div class="price-save">Экономия 500 ₽</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pack8" class="panel">
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-duration">8 занятий · 45 минут</div>
+          <div class="price-amount">15 000 ₽</div>
+          <div class="price-unit">за пакет · 1 875 ₽/занятие</div>
+          <div class="price-save">Экономия 1 000 ₽</div>
+        </div>
+        <div class="price-card popular">
+          <div class="popular-badge">популярный</div>
+          <div class="price-duration">8 занятий · 60 минут</div>
+          <div class="price-amount">19 000 ₽</div>
+          <div class="price-unit">за пакет · 2 375 ₽/занятие</div>
+          <div class="price-save">Экономия 1 000 ₽</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <div class="section-label">Отзывы</div>
+    <h2>Что говорят ученики</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">«Занимаемся уже 3 года — прогресс очевиден. Полина умеет объяснить так, что сложное становится понятным. Сейчас свободно общаюсь с коллегами из Лондона.»</p>
+        <div class="reviewer">
+          <div class="avatar">АМ</div>
+          <div>
+            <div class="reviewer-name">Алексей М.</div>
+            <div class="reviewer-sub">Взрослый ученик · Upper-Intermediate</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">«Отдали дочку в 5 лет — думали, рано. Оказалось, нет. Сейчас ей 9, она смотрит мультики на английском и не замечает, что это другой язык.»</p>
+        <div class="reviewer">
+          <div class="avatar">НК</div>
+          <div>
+            <div class="reviewer-name">Наталья К.</div>
+            <div class="reviewer-sub">Мама ученицы · 9 лет</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">«Готовилась к переезду в Германию — нужен был разговорный английский. За 4 месяца дошла до уверенного B2. На работу устроилась без проблем.»</p>
+        <div class="reviewer">
+          <div class="avatar">ЕВ</div>
+          <div>
+            <div class="reviewer-name">Екатерина В.</div>
+            <div class="reviewer-sub">Взрослый ученик · переехала в Мюнхен</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="reviews-note">* Отзывы будут заменены на реальные отзывы учеников</p>
+  </div>
+</section>
+
+<section class="booking">
+  <div class="container">
+    <div class="booking-card">
+      <div class="section-label" style="text-align:center">Запись</div>
+      <h2>Начнём знакомство?</h2>
+      <p>Напишите мне в Telegram — обсудим ваши цели, уровень и расписание. Первое занятие — пробное.</p>
+      <a class="tg-btn" href="https://t.me/polinapri" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Написать @polinapri
+      </a>
+      <p class="booking-note">Отвечаю в течение нескольких часов<br>Занятия в Zoom или Google Meet</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Polina Priemskaia · Уроки английского онлайн · <a href="https://t.me/polinapri" target="_blank">@polinapri</a></p>
+</footer>
+
+<script>
+function showPanel(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
